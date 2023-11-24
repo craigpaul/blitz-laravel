@@ -26,6 +26,11 @@
         "orchestra/testbench": "^7.0|^8.0",
         "phpunit/phpunit": "^10.0"
     },
+    "autoload-dev": {
+        "psr-4": {
+            "CraigPaul\\Blitz\\Tests\\": "tests/"
+        }
+    },
     "config": {
         "sort-packages": true
     },
