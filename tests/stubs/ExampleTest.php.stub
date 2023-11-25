@@ -1,0 +1,11 @@
+<?php
+
+namespace Tests\Blitz;
+
+class ExampleTest
+{
+    public function __invoke(): void
+    {
+        //
+    }
+}
