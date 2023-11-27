@@ -72,12 +72,12 @@ The MIT License (MIT). Please see [LICENSE](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/craigpaul/blitz-laravel.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-tests]: https://img.shields.io/github/workflow/status/craigpaul/laravel-postmark/tests/main?label=tests&style=flat-square
+[ico-tests]: https://img.shields.io/github/workflow/status/craigpaul/blitz-laravel/tests/main?label=tests&style=flat-square
 [ico-style-ci]: https://styleci.io/repos/80351847/shield?branch=main
 [ico-downloads]: https://img.shields.io/packagist/dt/craigpaul/blitz-laravel.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/craigpaul/blitz-laravel
-[link-tests]: https://github.com/craigpaul/laravel-postmark/actions?query=workflow%3Atests
+[link-tests]: https://github.com/craigpaul/blitz-laravel/actions?query=workflow%3Atests
 [link-style-ci]: https://styleci.io/repos/80351847
 [link-downloads]: https://packagist.org/packages/craigpaul/blitz-laravel
 [link-author-paul]: https://github.com/craigpaul
