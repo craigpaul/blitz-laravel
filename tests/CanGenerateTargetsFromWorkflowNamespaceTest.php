@@ -14,7 +14,7 @@ class CanGenerateTargetsFromWorkflowNamespaceTest extends TestCase
 
         $this->mock($namespace, function (MockInterface $mock) use ($response) {
             return $mock->makePartial()
-                ->shouldReceive('setUp')
+                ->shouldReceive('handle')
                 ->andReturnSelf()
                 ->getMock()
                 ->shouldReceive('getTargets')
