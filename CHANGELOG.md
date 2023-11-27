@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [0.2.0] - 2023-11-26
+
+### Changed
+
+- Changes conventional method name from setUp to handle to avoid potential confusion with linters confusing it for a PHPUnit test [`2f7674bba4`](https://github.com/craigpaul/blitz-laravel/commit/2f7674bba4)
+
+### Fixed
+
+- Updates incorrect link in README [`59f29208c3`](https://github.com/craigpaul/blitz-laravel/commit/59f29208c3)
+
 ## [0.1.1] - 2023-11-26
 
 ### Added
