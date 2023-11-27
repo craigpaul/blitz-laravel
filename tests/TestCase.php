@@ -43,4 +43,15 @@ class TestCase extends Orchestra
     {
         return [BlitzServiceProvider::class];
     }
+
+    /**
+     * Define environment setup.
+     *
+     * @param  \Illuminate\Foundation\Application  $app
+     * @return void
+     */
+    protected function getEnvironmentSetUp($app)
+    {
+        $app['config']->set('blitz.enabled', true);
+    }
 }
