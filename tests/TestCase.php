@@ -17,7 +17,7 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        $this->artisan('blitz:make ExampleTest');
+        $this->artisan('make:blitz ExampleTest');
     }
 
     /**
