@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2024-01-04
+
+### Added
+
+- Adds ability to provide histogram buckets for response grouping within the Blitz UI [`34d1fbc5a2`](https://github.com/craigpaul/blitz-laravel/commit/34d1fbc5a2)
+
 ## [0.2.0] - 2023-11-26
 
 ### Changed
