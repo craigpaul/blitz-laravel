@@ -21,7 +21,27 @@ BLITZ_ENABLED=true
 
 ## Usage
 
-...
+To create a new test case, use the `make:blitz` Artisan command. Tests will be placed within the `tests/Blitz` directory:
+
+```bash
+php artisan make:blitz ExampleTest
+```
+
+Once the test has been generated, you may begin writing out your workflow using the scaffolded `setUp` method.
+
+> [!NOTE]
+> Unlike the way you would write multiple test cases with a framework like PHPUnit in Laravel, each class is it's own unique test case (or workflow).
+
+Blitz provides a very fluent (and hopefully familiar) API for making HTTP requests to your application. There are both JSON and non-JSON methods matching all the regular HTTP verbs available for instructing Blitz on what requests to make to your application.
+
+The same _best practices_ you're used to in your everyday Laravel HTTP tests also apply here. You can begin by "setting up the world", meaning to create any seed data you want to exist for your test.
+
+> [!IMPORTANT]
+> This data is persisted and used in real time when executing the load tests against your application, so it is advised to model the data and requests based on expected real world usage.
+
+Once you have your data set up, you can move onto making actual requests into your application. This follows the same structure as a typical Laravel HTTP test by calling methods such as `get`, `post`, `put`, `patch`, or `delete` (or their JSON counterparts).
+
+Thats all there really is to setting up a basic load test with Blitz. From here, you will want to sign into your running instance of the Blitz UI (local or hosted) and set up the project to begin executing your load tests against whatever environment you desire.
 
 ## Changelog
 
