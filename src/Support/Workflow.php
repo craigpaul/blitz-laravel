@@ -59,9 +59,12 @@ class Workflow
             ['/', '.php'],
             ['\\', ''],
             ucfirst(
-                array_reverse(
-                    explode(base_path('/'), $this->path, 2)
-                )[0],
+                ltrim(
+                    array_reverse(
+                        explode(rtrim(base_path('/'), '/'), $this->path, 2)
+                    )[0],
+                    '/',
+                ),
             ),
         );
     }
