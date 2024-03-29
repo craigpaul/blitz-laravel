@@ -6,6 +6,11 @@ use CraigPaul\Blitz\Testing\TestCase;
 
 class {{ class }} extends TestCase
 {
+    /**
+     * Set up the workflow to be put under load.
+     *
+     * @return void
+     */
     public function setUp(): void
     {
         //
