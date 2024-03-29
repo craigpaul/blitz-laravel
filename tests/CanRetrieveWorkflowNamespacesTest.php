@@ -9,7 +9,7 @@ class CanRetrieveWorkflowNamespacesTest extends TestCase
     public function testCanRetrieveExistingWorkflowNamespaces()
     {
         $this->withoutExceptionHandling()
-            ->get(route('blitz.workflows'))
+            ->getJson(route('blitz.workflows'))
             ->assertOk()
             ->assertJsonCount(1)
             ->assertJson(fn (AssertableJson $json) => $json->where('0', 'Tests\\Blitz\\ExampleTest'));
