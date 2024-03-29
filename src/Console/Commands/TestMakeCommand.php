@@ -6,7 +6,7 @@ use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Attribute\AsCommand;
 
-#[AsCommand('blitz:make', 'Create a new test class')]
+#[AsCommand('make:blitz', 'Create a new test class')]
 class TestMakeCommand extends GeneratorCommand
 {
     /**
