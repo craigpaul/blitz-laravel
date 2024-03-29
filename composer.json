@@ -1,0 +1,26 @@
+{
+    "name": "craigpaul/blitz-laravel",
+    "description": "Laravel package for integrating with an internal load testing tool named Blitz",
+    "type": "library",
+    "keywords": [
+        "blitz",
+        "load testing",
+        "laravel",
+        "craigpaul"
+    ],
+    "homepage": "https://github.com/craigpaul/blitz-laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Craig Paul",
+            "email": "craig.paul@coconutsoftware.com",
+            "homepage": "https://www.coconutsoftware.com/",
+            "role": "Developer"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
