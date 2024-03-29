@@ -14,6 +14,16 @@ class BlitzServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/blitz.php',
+            ]);
+        }
+
+        if (! $this->app['config']->get('blitz.enabled')) {
+            return;
+        }
+
         $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
 
         if ($this->app->runningInConsole()) {
