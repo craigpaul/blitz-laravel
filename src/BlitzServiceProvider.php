@@ -14,11 +14,7 @@ class BlitzServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__.'/../config/blitz.php',
-            ]);
-        }
+        $this->mergeConfigFrom(__DIR__.'/../config/blitz.php', 'blitz');
 
         if (! $this->app['config']->get('blitz.enabled')) {
             return;
