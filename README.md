@@ -27,7 +27,7 @@ To create a new test case, use the `make:blitz` Artisan command. Tests will be p
 php artisan make:blitz ExampleTest
 ```
 
-Once the test has been generated, you may begin writing out your workflow using the scaffolded `setUp` method.
+Once the test has been generated, you may begin writing out your workflow using the scaffolded `handle` method.
 
 > [!NOTE]
 > Unlike the way you would write multiple test cases with a framework like PHPUnit in Laravel, each class is it's own unique test case (or workflow).

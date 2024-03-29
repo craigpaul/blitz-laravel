@@ -34,7 +34,7 @@ class TargetController
     {
         $instance = $this->app->make($request->post('namespace'));
 
-        $instance->setUp();
+        $instance->handle();
 
         return $this->response->json($instance->getTargets());
     }
