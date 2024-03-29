@@ -11,9 +11,17 @@ use Illuminate\Cookie\CookieValuePrefix;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Crypt;
+use InvalidArgumentException;
 
 abstract class TestCase
 {
+    /**
+     * The buckets that will be using for grouping response times by Blitz.
+     *
+     * @var array|null
+     */
+    protected ?array $buckets = null;
+
     /**
      * Additional cookies for the request.
      *
@@ -220,6 +228,28 @@ abstract class TestCase
     }
 
     /**
+     * Include histogram buckets for grouping response times.
+     *
+     * @param array $buckets
+     *
+     * @return $this
+     */
+    public function withBuckets(array $buckets): self
+    {
+        $pattern = '/^(\d+)(ns|us|ms|s|m|h)$/';
+
+        foreach ($buckets as $bucket) {
+            if (preg_match($pattern, $bucket) === false) {
+                throw new InvalidArgumentException("Invalid bucket value [$bucket] provided. This should match the following format: 100ms. Valid time units are 'ns', 'us', 'ms', 's', 'm', and 'h'.");
+            }
+        }
+
+        $this->buckets = $buckets;
+
+        return $this;
+    }
+
+    /**
      * Visit the given URI with a GET request.
      *
      * @param string $uri
@@ -419,11 +449,21 @@ abstract class TestCase
     }
 
     /**
+     * Retrieve the generated load test buckets.
+     *
+     * @return array|null
+     */
+    public function getBuckets(): ?array
+    {
+        return $this->buckets;
+    }
+
+    /**
      * Retrieve the generated load test targets.
      *
      * @return array
      */
-    public function getTargets()
+    public function getTargets(): array
     {
         return $this->targets;
     }

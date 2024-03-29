@@ -36,6 +36,9 @@ class TargetController
 
         $instance->handle();
 
-        return $this->response->json($instance->getTargets());
+        return $this->response->json([
+            'buckets' => $instance->getBuckets(),
+            'targets' => $instance->getTargets(),
+        ]);
     }
 }

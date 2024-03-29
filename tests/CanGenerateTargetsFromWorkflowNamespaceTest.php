@@ -2,6 +2,7 @@
 
 namespace CraigPaul\Blitz\Tests;
 
+use Illuminate\Testing\Fluent\AssertableJson;
 use Mockery\MockInterface;
 
 class CanGenerateTargetsFromWorkflowNamespaceTest extends TestCase
@@ -13,12 +14,15 @@ class CanGenerateTargetsFromWorkflowNamespaceTest extends TestCase
         $response = [1, 2, 3];
 
         $this->mock($namespace, function (MockInterface $mock) use ($response) {
-            return $mock->makePartial()
+            $mock = $mock->makePartial()
                 ->shouldReceive('handle')
                 ->andReturnSelf()
-                ->getMock()
-                ->shouldReceive('getTargets')
-                ->andReturn($response);
+                ->getMock();
+
+            $mock->shouldReceive('getBuckets')->andReturn(null);
+            $mock->shouldReceive('getTargets')->andReturn($response);
+
+            return $mock;
         });
 
         $this->withoutExceptionHandling()
@@ -26,6 +30,8 @@ class CanGenerateTargetsFromWorkflowNamespaceTest extends TestCase
                 'namespace' => $namespace,
             ])
             ->assertOk()
-            ->assertJson($response);
+            ->assertJson(fn (AssertableJson $json) =>
+                $json->where('buckets', null)->where('targets', $response),
+            );
     }
 }
