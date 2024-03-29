@@ -13,8 +13,11 @@ You can install the package via composer:
 composer require craigpaul/blitz-laravel
 ```
 
-The package will automatically register itself.
-// add note about how to disable registration and how to enable it when desired
+The package will automatically register itself, you will however have to explicitly enable it. To do so, update your `.env` file (or however you are managing environment variables for the environment in question) with the following variable.
+
+```bash
+BLITZ_ENABLED=true
+```
 
 ## Usage
 
