@@ -17,7 +17,7 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        Storage::build($this->app->basePath('tests/Blitz'))->put('ExampleTest.php', file_get_contents(__DIR__ . '/stubs/ExampleTest.php.stub'));
+        $this->artisan('blitz:make ExampleTest');
     }
 
     /**

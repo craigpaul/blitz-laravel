@@ -6,7 +6,7 @@ use CraigPaul\Blitz\Testing\TestCase;
 
 class {{ class }} extends TestCase
 {
-    public function handle(): void
+    public function setUp(): void
     {
         //
     }
