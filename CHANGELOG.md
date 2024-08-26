@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.4.0] - 2024-08-26
+
+### Added
+
+- Adds ability to set a user to act as for a given set of requests [`5651c525ac`](https://github.com/craigpaul/blitz-laravel/commit/5651c525ac)
+
 ## [0.3.0] - 2024-01-04
 
 ### Added
