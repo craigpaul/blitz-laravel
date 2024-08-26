@@ -7,10 +7,16 @@ use function array_is_list;
 use function array_map;
 use function base64_encode;
 use function count;
+
+use CraigPaul\Blitz\UnsupportedAuthenticationGuardException;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Cookie\CookieValuePrefix;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Session;
 use InvalidArgumentException;
 
 abstract class TestCase
@@ -223,6 +229,32 @@ abstract class TestCase
     public function disableCookieEncryption(): self
     {
         $this->encryptCookies = false;
+
+        return $this;
+    }
+
+    /**
+     * Set the currently logged in user for the request.
+     *
+     * @param \Illuminate\Contracts\Auth\Authenticatable $user
+     * @param null|string $guard
+     *
+     * @return $this
+     *
+     * @throws \CraigPaul\Blitz\UnsupportedAuthenticationGuardException
+     */
+    public function actingAs(Authenticatable $user, ?string $guard = null)
+    {
+        $guard = $guard ?: Config::get('auth.defaults.guard');
+
+        Auth::guard($guard)->login($user);
+
+        Session::save();
+
+        match (Config::get('auth.guards.' . $guard . '.driver')) {
+            'session' => $this->withCookie(Config::get('session.cookie'), Session::getId()),
+            default => throw new UnsupportedAuthenticationGuardException($guard),
+        };
 
         return $this;
     }
