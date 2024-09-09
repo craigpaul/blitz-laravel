@@ -1,6 +1,6 @@
 <?php
 
-namespace CraigPaul\Blitz;
+namespace CraigPaul\Blitz\Exceptions;
 
 use Exception;
 
