@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.4.1] - 2024-09-09
+
+### Fixed
+
+- Fixes non-compliant PSR-4 namespace [`1db519b115`](https://github.com/craigpaul/blitz-laravel/commit/1db519b115)
+
 ## [0.4.0] - 2024-08-26
 
 ### Added
