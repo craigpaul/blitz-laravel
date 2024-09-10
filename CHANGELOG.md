@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.4.3] - 2024-09-10
+
+### Fixed
+
+- Fixes missed namespace update [`e9b88eef6c`](https://github.com/craigpaul/blitz-laravel/commit/e9b88eef6c)
+
 ## [0.4.2] - 2024-09-10
 
 ### Added
