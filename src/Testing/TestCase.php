@@ -7,8 +7,7 @@ use function array_is_list;
 use function array_map;
 use function base64_encode;
 use function count;
-
-use CraigPaul\Blitz\UnsupportedAuthenticationGuardException;
+use CraigPaul\Blitz\Exceptions\UnsupportedAuthenticationGuardException;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Cookie\CookieValuePrefix;
 use Illuminate\Support\Arr;
@@ -241,7 +240,7 @@ abstract class TestCase
      *
      * @return $this
      *
-     * @throws \CraigPaul\Blitz\UnsupportedAuthenticationGuardException
+     * @throws \CraigPaul\Blitz\Exceptions\UnsupportedAuthenticationGuardException
      */
     public function actingAs(Authenticatable $user, ?string $guard = null)
     {
