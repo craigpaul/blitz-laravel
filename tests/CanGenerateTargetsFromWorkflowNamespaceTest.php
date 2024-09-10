@@ -2,7 +2,9 @@
 
 namespace CraigPaul\Blitz\Tests;
 
+use Illuminate\Http\Request;
 use Illuminate\Testing\Fluent\AssertableJson;
+use Mockery;
 use Mockery\MockInterface;
 
 class CanGenerateTargetsFromWorkflowNamespaceTest extends TestCase
@@ -13,9 +15,10 @@ class CanGenerateTargetsFromWorkflowNamespaceTest extends TestCase
 
         $response = [1, 2, 3];
 
-        $this->mock($namespace, function (MockInterface $mock) use ($response) {
+        $this->mock($namespace, function (MockInterface $mock) use ($namespace, $response) {
             $mock = $mock->makePartial()
                 ->shouldReceive('handle')
+                ->with(Mockery::type(Request::class))
                 ->andReturnSelf()
                 ->getMock();
 

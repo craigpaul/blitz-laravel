@@ -34,7 +34,7 @@ class TargetController
     {
         $instance = $this->app->make($request->post('namespace'));
 
-        $instance->handle();
+        $instance->handle($request);
 
         return $this->response->json([
             'buckets' => $instance->getBuckets(),
