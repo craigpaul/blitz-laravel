@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.4.2] - 2024-09-10
+
+### Added
+
+- Passes current request instance into test [`b192d4ec6d`](https://github.com/craigpaul/blitz-laravel/commit/b192d4ec6d)
+
 ## [0.4.1] - 2024-09-09
 
 ### Fixed
