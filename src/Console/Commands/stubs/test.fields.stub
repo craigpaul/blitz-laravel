@@ -1,0 +1,30 @@
+<?php
+
+namespace {{ namespace }};
+
+use CraigPaul\Blitz\Testing\TestCase;
+
+class {{ class }} extends TestCase
+{
+    /**
+     * Set up the workflow to be put under load.
+     *
+     * @return void
+     */
+    public function handle(): void
+    {
+        //
+    }
+
+    /**
+     * Set up the dynamic fields for this workflow.
+     * 
+     * @return array
+     */
+    public function fields(): array
+    {
+        return [
+            //
+        ]
+    }
+}

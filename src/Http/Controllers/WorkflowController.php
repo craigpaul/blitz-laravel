@@ -46,7 +46,18 @@ class WorkflowController
             ),
         );
 
-        $workflows = array_map(fn (SplFileInfo $file) => Workflow::fromFile($file)->className(), $files);
+        $workflows = array_map(function (SplFileInfo $file) {
+            $workflow = Workflow::fromFile($file);
+            $namespace = $workflow->className;
+            $fields = $workflow->customizable
+                ? $this->app->make($namespace)->fields()
+                : [];
+
+            return [
+                'fields' => $fields,
+                'namespace' => $namespace,
+            ];
+        }, $files);
 
         return $this->response->json($workflows);
     }
