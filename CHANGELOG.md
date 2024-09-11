@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.5.0] - 2024-09-11
+
+### Added
+
+- Adds support for supplying customizable fields in a given workflow/run [`0972f43a37`](https://github.com/craigpaul/blitz-laravel/commit/0972f43a37)
+
 ## [0.4.3] - 2024-09-10
 
 ### Fixed
