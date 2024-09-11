@@ -24,7 +24,7 @@ class CanRetrieveWorkflowNamespacesTest extends TestCase
         $this->artisan('make:blitz ExampleOptionableLoadTest --fields')->assertOk();
 
         $this->mock('Tests\\Blitz\\ExampleOptionableLoadTest', function (MockInterface $mock) {
-            return $mock->shouldReceive('options')
+            return $mock->shouldReceive('fields')
                 ->andReturn([
                     'foo' => 'bar',
                 ])
