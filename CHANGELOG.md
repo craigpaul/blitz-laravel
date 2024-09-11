@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.5.1] - 2024-09-11
+
+### Fixed
+
+- Fixes missing mock expectation [`3718d86131`](https://github.com/craigpaul/blitz-laravel/commit/3718d86131)
+
 ## [0.5.0] - 2024-09-11
 
 ### Added
