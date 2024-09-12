@@ -7,6 +7,7 @@ use Illuminate\Contracts\Filesystem\Factory;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use SplFileInfo;
 
 class WorkflowController
@@ -30,9 +31,11 @@ class WorkflowController
     /**
      * Display a listing of the resource.
      *
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
         $directory = $this->app->basePath('tests/Blitz');
 
@@ -46,11 +49,11 @@ class WorkflowController
             ),
         );
 
-        $workflows = array_map(function (SplFileInfo $file) {
+        $workflows = array_map(function (SplFileInfo $file) use ($request) {
             $workflow = Workflow::fromFile($file);
             $namespace = $workflow->className;
             $fields = $workflow->customizable
-                ? $this->app->make($namespace)->fields()
+                ? $this->app->make($namespace)->fields($request)
                 : [];
 
             return [

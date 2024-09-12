@@ -58,7 +58,7 @@ class Workflow
                     ),
                 ),
             ),
-            customizable: self::fileContains($file, 'public function fields()'),
+            customizable: self::fileContains($file, 'public function fields'),
             name: ucfirst(
                 strtolower(
                     implode(' ', preg_split('/(?=\p{Lu})/u', strstr($file->getFilename(), 'Test.php', true), -1, PREG_SPLIT_NO_EMPTY)),
