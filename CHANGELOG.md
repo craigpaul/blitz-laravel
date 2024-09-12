@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.5.2] - 2024-09-12
+
+### Changed
+
+- Allows the field generation to take advantage of the current request to allow for things like tenant identification [`bb63cc81ae`](https://github.com/craigpaul/blitz-laravel/commit/bb63cc81ae)
+
 ## [0.5.1] - 2024-09-11
 
 ### Fixed
