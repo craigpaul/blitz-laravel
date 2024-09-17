@@ -9,19 +9,19 @@ class Field implements JsonSerializable
     /**
      * Create a new Field instance.
      *
-     * @param string|null $description
+     * @param string $description
      * @param string $label
      * @param string $name
      * @param \CraigPaul\Blitz\Support\Option[] $options
-     * @param string|null $placeholder
+     * @param string $placeholder
      * @param \CraigPaul\Blitz\Support\FieldType $type
      */
     public function __construct(
-        public readonly ?string $description,
+        public readonly string $description = '',
         public readonly string $label,
         public readonly string $name,
         public readonly array $options = [],
-        public readonly ?string $placeholder,
+        public readonly string $placeholder = '',
         public readonly FieldType $type,
     ) {
     }
