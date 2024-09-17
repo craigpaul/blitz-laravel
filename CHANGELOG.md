@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.5.3] - 2024-09-17
+
+### Fixed
+
+- Removes ability to supply null parameters to Field DTO [`aee29af3ac`](https://github.com/craigpaul/blitz-laravel/commit/aee29af3ac)
+
 ## [0.5.2] - 2024-09-12
 
 ### Changed
